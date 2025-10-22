@@ -1,7 +1,5 @@
 """
-Supervised Learning Model for Mouse Alcohol Consumption Prediction
-This model analyzes historical alcohol consumption data per cycle per mouse
-and predicts future consumption patterns.
+Random forest regression model, using our collected SR alcohol intake data to predict future alcohol intake.
 """
 
 import numpy as np
@@ -16,24 +14,14 @@ from sklearn.metrics import mean_absolute_error, mean_squared_error, r2_score
 import warnings
 warnings.filterwarnings('ignore')
 
-# Set random seed for reproducibility
+
 np.random.seed(42)
 
 
 class MouseAlcoholPredictor:
-    """
-    A supervised learning model to predict mouse alcohol consumption.
-    """
     
     def __init__(self, model_type='random_forest'):
-        """
-        Initialize the predictor with specified model type.
-        
-        Parameters:
-        -----------
-        model_type : str
-            Type of model to use: 'random_forest', 'gradient_boost', or 'linear'
-        """
+       
         self.model_type = model_type
         self.scaler = StandardScaler()
         self.model = self._initialize_model()
@@ -41,7 +29,7 @@ class MouseAlcoholPredictor:
         self.is_trained = False
         
     def _initialize_model(self):
-        """Initialize the machine learning model based on type."""
+      
         if self.model_type == 'random_forest':
             return RandomForestRegressor(n_estimators=100, random_state=42, max_depth=10)
         elif self.model_type == 'gradient_boost':
