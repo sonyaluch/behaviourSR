@@ -1,6 +1,6 @@
 # Mouse Alcohol Consumption Prediction Model
 
-This machine learning model  analyzes historical alcohol consumption data for laboratory mice, and then uses it to predict future consumption patterns based on physiological and environmental factors.
+This machine learning model analyzes historical alcohol consumption data for laboratory mice, and then uses it to predict future consumption patterns based on physiological and environmental factors.
 
 ### Requirements
 
